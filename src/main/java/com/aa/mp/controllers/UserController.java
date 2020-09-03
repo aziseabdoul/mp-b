@@ -21,9 +21,9 @@ public class UserController {
         service.registerUser(dto);
     }
 
-    /*@GetMapping("/login")
-    public void login(@RequestBody UserDto dto) {
-        service.verifyUser(dto);
-    }*/
+    @GetMapping("/api/login")
+    public void login() {
+
+    }
 
 }
