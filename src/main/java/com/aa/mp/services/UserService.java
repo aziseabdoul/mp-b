@@ -6,4 +6,6 @@ public interface UserService {
 
     void registerUser(UserDto dto);
 
+    void verifyUser(String username, String password);
+
 }

@@ -4,7 +4,7 @@ import com.aa.mp.dtos.UserDto;
 import com.aa.mp.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class UserController {
 
@@ -21,9 +21,15 @@ public class UserController {
         service.registerUser(dto);
     }
 
-    @GetMapping("/api/login")
-    public void login() {
+    //@GetMapping("/api/login")
+    //public void login() {
 
+    //}
+
+    @RequestMapping("/login")
+    public void login(@RequestBody UserDto user) {
+        //userService.verifyUser(user.getUsername(), user.getPassword());
+        service.verifyUser(user.getUsername(), user.getPassword());
     }
 
 }
